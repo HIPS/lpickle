@@ -2,10 +2,10 @@ import pickle
 from coding import encode, decode
 from StringIO import StringIO
 
-def dump(obj, file, protocol=0):
+def dump(obj, file, protocol=1):
     file.write(dumps(obj, protocol))
 
-def dumps(obj, protocol=0):
+def dumps(obj, protocol=1):
     return encode(pickle.dumps(obj, protocol))
 
 def load(file):
