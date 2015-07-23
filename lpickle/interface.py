@@ -1,6 +1,6 @@
 import pickle
 from coding import encode, decode
-from StringIO import StringIO
+from cStringIO import StringIO
 
 def dump(obj, file, protocol=1):
     file.write(dumps(obj, protocol))
