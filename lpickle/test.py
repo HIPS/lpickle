@@ -36,7 +36,7 @@ def test_mixed():
         check("".join(chars))
 
 def test_random_bytes():
-    check(os.urandom(10**5))
+    check(os.urandom(10**6))
 
 def test_string_dump_load():
     obj_A = ([1, 3.4, "a"],

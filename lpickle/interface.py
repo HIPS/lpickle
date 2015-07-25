@@ -1,4 +1,4 @@
-import pickle
+import cPickle as pickle
 from coding import encode, decode
 from cStringIO import StringIO
 

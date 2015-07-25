@@ -3,7 +3,7 @@ import re
 """
 We want each invocation of line_pickle.dump to produce a string containing
 exactly one linefeed, at the end of the string. So we encode all existing
-linefeeds as 0n and existing 0 chars as r'00'.
+linefeeds as '0n' and existing '0' chars as '00'.
 """
 
 def encode_match(match):
@@ -24,8 +24,10 @@ def decode_match(match):
     else:
         raise Exception("Unexpected character {0}".format(repr(c)))
 
+encode_re= re.compile('(\n|0)')
 def encode(string):
-    return re.compile('(\n|0)').sub(encode_match, string) + "\n"
+    return encode_re.sub(encode_match, string) + "\n"
 
+decode_re = re.compile('(00|0n)')
 def decode(string):
-    return re.compile('(00|0n)').sub(decode_match, string[:-1])
+    return decode_re.sub(decode_match, string[:-1])
