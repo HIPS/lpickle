@@ -16,3 +16,7 @@ def loads(string):
 
 def load_line(line):
     return pickle.loads(decode(line))
+
+def stream(file):
+    for line in iter(file.readline, ''):
+        yield loads(line)

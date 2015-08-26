@@ -1,1 +1,1 @@
-from interface import dump, load, dumps, loads
+from interface import dump, load, dumps, loads, stream

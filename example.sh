@@ -21,8 +21,7 @@ EOF
 cat > proclaim_results.py <<EOF
 import sys
 import lpickle as pickle
-for line in sys.stdin.readlines():
-    x, x_squared = pickle.loads(line)
+for x, x_squared in pickle.stream(sys.stdin):
     print "The square of {0} is {1}".format(x, x_squared)
 EOF
 
